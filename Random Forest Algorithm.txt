@@ -1,0 +1,151 @@
+https://www.analyticsvidhya.com/blog/2021/06/understanding-random-forest/
+
+Before understanding the working of the random forest algorithm in machine learning, we must look into the ensemble learning technique. 
+Ensemble simplymeans combining multiple models. 
+Thus a collection of models is used to make predictions rather than an individual model.
+
+**************************************************************
+
+Ensemble uses two types of methods:
+
+1. Bagging– It creates a different training subset from sample training data with replacement & the final output is based on majority voting. 
+For example,  Random Forest.
+Random Forest is a bagging method that randomly draws a fixed number of samples from the training set with replacement.
+This means that a data point can be drawn more than once. 
+Random Forest models are a popular model for a large number of tasks, where they produce aggregated predictions using the predictions from several decision trees
+The majority vote from the decision trees is used to make the final prediction
+
+
+2. Boosting– It combines weak learners into strong learners by creating sequential models such that the final model has the highest accuracy. 
+For example,  ADA BOOST, XG BOOST.
+
+**************************************************************
+In the case of random forest, the hyperparameters that can be tuned include:
+1- The number of trees in the forestthe maximum number of features considered for splitting each node
+2- The maximum depth of each tree
+3- The maximum number of features considered for splitting each node
+
+
+**************************************************************
+It leverages an ensemble of multiple decision trees to generate predictions or classifications. 
+By combining the outputs of these trees, the random forest algorithm delivers a consolidated and more accurate result.
+Its widespread popularity stems from its user-friendly nature and adaptability, enabling it to tackle both classification and regression problems effectively.
+The algorithm’s strength lies in its ability to handle complex datasets and mitigate (alleviate) overfitting, making it a valuable tool for various predictive tasks in machine learning.
+
+One of the most important features of the Random Forest Algorithm is that it can handle the data set containing continuous variables, as in the case of regression, and categorical variables, as in the case of classification. 
+It performs better for classification and regression tasks.
+
+**************************************************************
+
+Here are the steps involved in bagging:
+Multiple subsets are created from the original dataset with equal tuples, selecting observations with replacement.
+A base model is created on each of these subsets.
+Each model is learned in parallel with each training set and independent of each other.
+The final predictions are determined by combining the predictions from all the models.
+
+*************************************************************
+
+Bagging, also known as Bootstrap Aggregation, is the ensemble technique used by random forest.
+Bagging chooses a random sample/random subset from the entire data set. 
+Hence each model is generated from the samples (Bootstrap Samples) provided by the Original Data with replacement known as row sampling. 
+it means there is a high possibility that each sample won’t contain unique data. 
+This step of row sampling with replacement is called bootstrap. 
+Now each model is trained independently, which generates results. 
+The final output is based on majority voting after combining the results of all models. 
+This step which involves combining all the results and generating output based on majority voting, is known as aggregation.
+
+
+Here the bootstrap sample is taken from actual data (Bootstrap sample 01, Bootstrap sample 02, and Bootstrap sample 03) with a replacement. 
+it means there is a high possibility that each sample won’t contain unique data. 
+The model (Model 01, Model 02, and Model 03) obtained from this bootstrap sample is trained independently. 
+Each model generates results as shown. 
+Now the Happy emoji has a majority when compared to the Sad emoji. 
+Thus based on majority voting final output is obtained as Happy emoji.
+
+*************************************************************
+
+A boosting algorithm combines multiple simple models (also known as weak learners or base estimators) to generate the final output. 
+It is done by building a model by using weak models in series.
+
+There are several boosting algorithms; AdaBoost was the first really successful boosting algorithm that was developed for the purpose of binary classification. AdaBoost is an abbreviation for Adaptive Boosting and is a prevalent boosting technique that combines multiple “weak classifiers” into a single “strong classifier.”
+
+4 Boosting Algorithms in Machine Learning
+1- Gradient Boosting Machine (GBM)
+2- Extreme Gradient Boosting Machine (XGBM)
+3- LightGBM
+4- CatBoost
+
+https://www.analyticsvidhya.com/blog/2020/02/4-boosting-algorithms-machine-learning/
+
+You’ve built a linear regression model that gives you a decent 77% accuracy on the validation dataset. 
+Next, you decide to expand your portfolio by building a k-Nearest Neighbour (KNN) model and a decision tree model on the same dataset. 
+These models gave you an accuracy of 62% and 89% on the validation set respectively.
+
+It’s obvious that all three models work in completely different ways. 
+For instance, the linear regression model tries to capture linear relationships in the data while the decision tree model attempts to capture the non-linearity in the data.
+
+***********************************************
+
+3. LightGBM
+The LightGBM boosting algorithm is becoming more popular by the day due to its speed and efficiency. 
+LightGBM is able to handle huge amounts of data with ease. 
+keep in mind that this algorithm does not perform well with a small number of data points.
+
+4. CatBoost
+As the name suggests, CatBoost is a boosting algorithm that can handle categorical variables in the data. 
+Most machine learning algorithms cannot work with strings or categories in the data. 
+Thus, converting categorical variables into numerical values is an essential preprocessing step.
+CatBoost can internally handle categorical variables in the data. 
+These variables are transformed to numerical ones using various statistics on combinations of features.
+
+
+
+
+***********************************************
+
+Difference Between Decision Tree and Random Forest:
+
+Random forest is a collection of decision trees; still, there are a lot of differences in their behavior.
+
+Decision trees:
+1. Decision trees normally suffer from the problem of overfitting if it’s allowed to grow without any control.
+2. A single decision tree is faster in computation.
+3. When a data set with features is taken as input by a decision tree, it will formulate some rules to make predictions.
+
+Random Forest:
+1. Random forests are created from subsets of data, and the final output is based on average or majority ranking; hence the problem of overfitting is taken care of.
+2. It is comparatively slower.
+3. Random forest randomly selects observations, builds a decision tree, and takes the average result. It doesn’t use any set of formulas.
+
+
+Thus random forests are much more successful than decision trees only if the trees are diverse and acceptable.
+
+
+*************************************************************************
+
+Hyperparameters to Increase the Speed :
+
+1- The 'max_depth' hyperparameter specifies the maximum depth of each decision tree in the forest.
+
+2- n_jobs: it tells the engine how many processors it is allowed to use. 
+If the value is 1, it can use only one processor, but if the value is -1, there is no limit.
+
+3- oob_score: OOB means out of the bag.
+It is a random forest cross-validation method. 
+In this, one-third of the sample is not used to train the data; instead used to evaluate its performance. 
+These samples are called out-of-bag samples.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
